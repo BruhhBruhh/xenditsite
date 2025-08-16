@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState, useEffect, CSSProperties } from 'react'
 
 export default function XendItWebsite() {
@@ -8,7 +9,6 @@ export default function XendItWebsite() {
   const [tokenPrice, setTokenPrice] = useState('Loading...')
   const [activeTab, setActiveTab] = useState('about')
   const [buttonHover, setButtonHover] = useState(false)
-  const [buyButtonHover, setBuyButtonHover] = useState(false)
   const [xButtonHover, setXButtonHover] = useState(false)
   const [telegramButtonHover, setTelegramButtonHover] = useState(false)
 
@@ -249,18 +249,19 @@ export default function XendItWebsite() {
           </button>
 
           {/* Small logo */}
-          <img
+          <Image
             src="https://i.imgur.com/ytQ3idg.png"
             alt="Logo"
+            width={200}
+            height={200}
             style={{
               position: 'absolute',
               top: '20px',
               left: '20px',
-              width: '200px',
-              height: '200px',
               zIndex: 5,
               animation: 'bounce 2s ease-in-out infinite'
             } as CSSProperties}
+            unoptimized
           />
         </div>
 
@@ -316,14 +317,15 @@ export default function XendItWebsite() {
             zIndex: 10,
             position: 'relative'
           }}>
-            <img
+            <Image
               src="https://i.imgur.com/ytQ3idg.png"
               alt="Logo"
+              width={200}
+              height={200}
               style={{
-                width: '200px',
-                height: '200px',
                 animation: 'bounce 2s ease-in-out infinite'
               } as CSSProperties}
+              unoptimized
             />
             <div style={{
               backgroundColor: '#84cc16',
@@ -491,31 +493,31 @@ export default function XendItWebsite() {
                       marginBottom: '20px',
                       textAlign: 'center'
                     }}>
-                      Pronouced: 'SEND' but wif a 'X'
+                      Pronounced: &apos;SEND&apos; but wif a &apos;X&apos;
                     </h2>
                   </div>
                 )}
 
-{activeTab === 'buy' && (
+                {activeTab === 'buy' && (
                   <div>
-                    <h2 style={{ 
-                      color: '#84cc16', 
-                      fontSize: '2rem', 
+                    <h2 style={{
+                      color: '#84cc16',
+                      fontSize: '2rem',
                       marginBottom: '10px',
                       textAlign: 'center'
                     }}>
                       Buy $XEND Instantly
                     </h2>
-                    <p style={{ 
-                      textAlign: 'center', 
-                      color: '#84cc16', 
+                    <p style={{
+                      textAlign: 'center',
+                      color: '#84cc16',
                       marginBottom: '25px',
                       fontSize: '0.9rem',
                       opacity: 0.8
                     }}>
                       Swap SOL for $XEND directly on this page
                     </p>
-                    
+
                     {/* Chart and Swap Section */}
                     <div style={{
                       backgroundColor: 'rgba(132, 204, 22, 0.05)',
@@ -612,7 +614,7 @@ export default function XendItWebsite() {
                           </a>
                         </div>
                       </div>
-                      
+
                       {/* DexScreener Chart */}
                       <div style={{
                         borderTop: '1px solid rgba(132, 204, 22, 0.3)',
@@ -638,7 +640,7 @@ export default function XendItWebsite() {
                         />
                       </div>
                     </div>
-                    
+
                     {/* Contract Info Section */}
                     <div style={{
                       backgroundColor: 'rgba(234, 179, 8, 0.1)',
@@ -647,9 +649,9 @@ export default function XendItWebsite() {
                       padding: '15px',
                       marginBottom: '20px'
                     }}>
-                      <h3 style={{ 
-                        color: '#eab308', 
-                        fontSize: '1rem', 
+                      <h3 style={{
+                        color: '#eab308',
+                        fontSize: '1rem',
                         marginBottom: '10px',
                         fontWeight: 'bold'
                       }}>
@@ -665,13 +667,13 @@ export default function XendItWebsite() {
                         wordBreak: 'break-all',
                         cursor: 'pointer'
                       }}
-                      onClick={() => {
-                        navigator.clipboard.writeText('ERtzyCSu9FPvdxwsUS13cueHfFWQNkSvbKh5nTpUpump')
-                        alert('Token address copied!')
-                      }}>
+                        onClick={() => {
+                          navigator.clipboard.writeText('ERtzyCSu9FPvdxwsUS13cueHfFWQNkSvbKh5nTpUpump')
+                          alert('Token address copied!')
+                        }}>
                         ERtzyCSu9FPvdxwsUS13cueHfFWQNkSvbKh5nTpUpump
-                        <span style={{ 
-                          marginLeft: '10px', 
+                        <span style={{
+                          marginLeft: '10px',
                           fontSize: '0.75rem',
                           color: '#eab308'
                         }}>
@@ -679,7 +681,7 @@ export default function XendItWebsite() {
                         </span>
                       </div>
                     </div>
-                    
+
                     {/* Additional Links */}
                     <div style={{
                       display: 'grid',
@@ -687,7 +689,7 @@ export default function XendItWebsite() {
                       gap: '15px',
                       marginTop: '20px'
                     }}>
-                      <a 
+                      <a
                         href="https://jup.ag/tokens/ERtzyCSu9FPvdxwsUS13cueHfFWQNkSvbKh5nTpUpump"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -714,8 +716,8 @@ export default function XendItWebsite() {
                       >
                         🪐 Jupiter Page
                       </a>
-                      
-                      <a 
+
+                      <a
                         href="https://dexscreener.com/solana/ft9pg1expv89kksi5lb9c25zbms8sre7hmz6axymc7jw"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -809,7 +811,7 @@ export default function XendItWebsite() {
                         Ready to join the XEND IT movement?
                       </p>
                       <p style={{ color: '#84cc16', fontWeight: 'bold', fontSize: '1.5rem' }}>
-                        Let's XEND IT together! 🚀
+                        Let&apos;s XEND IT together! 🚀
                       </p>
                     </div>
                   </div>
